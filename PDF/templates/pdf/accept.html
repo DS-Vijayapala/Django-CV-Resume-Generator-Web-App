@@ -6,7 +6,9 @@
 
 <div class="container mt-5">
 
-    <form>
+    <form method="POST">
+
+        {% csrf_token %}
 
         <div class="mb-3">
 
