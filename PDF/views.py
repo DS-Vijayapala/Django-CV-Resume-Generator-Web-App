@@ -23,15 +23,14 @@ def index(request):
         previous_work = request.POST.get('previous_work', '')
         skills = request.POST.get('skills', '')
 
-        profile = ProfileInfo(name=name, email=email, phone=phone, summary=summary, degree=degree, 
+        profile = ProfileInfo(name=name, email=email, phone=phone, summary=summary, degree=degree,
                               school=school, university=university, previous_work=previous_work, skills=skills)
         profile.save()
-
 
     return render(request, 'pdf/accept.html')
 
 
-def resume(request , id):
+def resume(request, id):
     """ View for the resume page"""
 
     user_profile = ProfileInfo.objects.get(pk=id)
@@ -39,9 +38,9 @@ def resume(request , id):
     context = {
 
         'user_profile': user_profile
-        
-        }
-    
+
+    }
+
     template = loader.get_template('pdf/resume.html')
     html = template.render(context)
 
@@ -51,7 +50,8 @@ def resume(request , id):
         'encoding': "UTF-8",
     }
 
-    config = pdfkit.configuration(wkhtmltopdf=r"C:\wkhtmltox\bin\wkhtmltopdf.exe")
+    config = pdfkit.configuration(
+        wkhtmltopdf=r"C:\wkhtmltox\bin\wkhtmltopdf.exe")
 
     pdf = pdfkit.from_string(html, False, options, configuration=config)
 
@@ -60,6 +60,16 @@ def resume(request , id):
     filename = 'resume.pdf'
 
     return response
-    
 
-   
+
+def listview(request):
+    """View for the list page"""
+
+    profiles = ProfileInfo.objects.all()
+
+    context = {
+
+        'profiles': profiles
+    }
+
+    return render(request, 'pdf/list.html', context)
