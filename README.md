@@ -45,7 +45,7 @@ The **CV/Resume Generator** is a powerful web application designed to help users
    ```
 6. **Open in Browser:**
    - Visit `http://127.0.0.1:8000/`
-   - Download cv `http://127.0.0.1:8000/list`
+   - Download Your CV `http://127.0.0.1:8000/list`
 
 ## 🚀 Future Plans
 
