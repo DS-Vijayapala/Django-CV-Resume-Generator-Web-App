@@ -1,0 +1,82 @@
+{% extends 'pdf/base.html' %}
+
+{% block content %}
+
+
+
+<div>
+
+    <form>
+
+        <div class="mb-3">
+
+            <label for="" class="form-label">Full Name</label>
+            <input type="text" class="form-control" id="name" name="name" placeholder="Enter your full name">
+
+        </div>
+
+        <div class="mb-3">
+
+            <label for="" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email">
+
+        </div>
+
+        <div class="mb-3">
+
+            <label for="" class="form-label">Phone</label>
+            <input type="text" class="form-control" id="phone" name="phone" placeholder="Enter your phone number">
+
+        </div>
+
+        <div class="mb-3">
+
+            <label for="" class="form-label">About You</label>
+            <input type="textarea" class="form-control" id="summary" name="summary" placeholder="Write about yourself">
+
+        </div>
+
+        <div class="mb-3">
+
+            <label for="" class="form-label">Degree</label>
+            <input type="text" class="form-control" id="degree" name="degree" placeholder="Add your Degree">
+
+        </div>
+
+        <div class="mb-3">
+
+            <label for="" class="form-label">School</label>
+            <input type="text" class="form-control" id="school" name="school" placeholder="Enter your School">
+
+        </div>
+
+        <div class="mb-3">
+
+            <label for="" class="form-label">University</label>
+            <input type="text" class="form-control" id="university" name="university"
+                placeholder="Enter your university">
+
+        </div>
+
+        <div class="mb-3">
+
+            <label for="" class="form-label">Previous Work</label>
+            <input type="text" class="form-control" id="previous_work" name="previous_work">
+
+        </div>
+
+        <div class="mb-3">
+
+            <label for="" class="form-label">Skills</label>
+            <input type="text" class="form-control" id="skills" name="skills" placeholder="Add your skills">
+
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+
+    </form>
+
+</div>
+
+
+{% endblock %}
