@@ -24,6 +24,21 @@ def index(request):
         profile.save()
 
 
-
-
     return render(request, 'pdf/accept.html')
+
+
+def resume(request , id):
+    """ View for the resume page"""
+
+    user_profile = ProfileInfo.objects.get(pk=id)
+
+    context = {
+
+        'user_profile': user_profile
+        
+        }
+
+    return render(request, 'pdf/resume.html', context)
+    
+
+   
